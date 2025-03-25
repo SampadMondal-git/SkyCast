@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import myStyles from "./App.module.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <div className={myStyles.App}>
+        <div className={myStyles.Navbar}>
+          <div className={myStyles.Logo}></div>
+          <div className={myStyles.Menu}></div>
+          <div className={myStyles.Logout}></div>
+        </div>
 
-export default App
+        <div className={myStyles.Main}>
+          <div className={myStyles.Header}>
+            <div className={myStyles.Search}></div>
+            <div className={myStyles.User}></div>
+          </div>
+          <div className={myStyles.Content}>
+            <div className={myStyles.Weather}>
+              <div className={myStyles.Temperature}></div>
+              <div className={myStyles.Forecast}></div>
+            </div>
+            <div className={myStyles.Highlight}>
+              <div className={myStyles.TodaysHighlight}></div>
+              <div className={myStyles.OtherCities}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+export default App;

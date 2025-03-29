@@ -20,72 +20,426 @@ body {
 }
 
 .Navbar {
-  background-color: red;
-  width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(225, 225, 225, 0.05);
+  width: 4.5rem;
   margin: 2rem 1rem;
-  padding: 2rem;
-  border-radius: 10px;
+  padding: 0.5rem 0;
+  border-radius: 20px;
+}
+
+.Logo, .Menu, .Logout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+  border-radius: 15px;
+}
+
+.Logo img {
+  filter: brightness(0) saturate(100%) invert(19%) sepia(94%) saturate(6782%) hue-rotate(264deg) brightness(97%) contrast(90%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  object-fit: contain;
+}
+
+.Menu img {
+  filter: brightness(0) saturate(100%) invert(19%) sepia(94%) saturate(6782%) hue-rotate(264deg) brightness(97%) contrast(90%);
+  width: 25px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.Logout img {
+  filter: brightness(0) saturate(100%) invert(19%) sepia(94%) saturate(6782%) hue-rotate(264deg) brightness(97%) contrast(90%);
+  width: 25px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* .toggleContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 34px;
+}
+
+.toggleSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(225, 225, 225, 0.05);
+  transition: all 0.3s ease-in-out;
+  border-radius: 40px;
+}
+
+.toggleSlider:before {
+  content: "🌙";
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgba(225, 225, 225, 0.05);
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .toggleSlider {
+  background: linear-gradient(120deg, #0e1421, #742BEC);
+}
+
+input:checked + .toggleSlider:before {
+  content: "☀️";
+  transform: translateX(22px);
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.toggleSlider:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
+input:checked + .toggleSlider:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+.toggleSlider:active {
+  transform: scale(0.95);
+  transition: transform 0.2s ease-in-out;
+}
+input:checked + .toggleSlider:active {
+  transform: scale(0.95);
+  transition: transform 0.2s ease-in-out;
+} */
+
+.Switch {
+  font-size: 17px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  margin: 0 0.5rem;
+}
+
+.Switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.Slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73C0FC;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.Slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
+}
+
+.Sun svg {
+  position: absolute;
+  top: 3px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.Moon svg {
+  fill: #73C0FC;
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+/* .switch:hover */.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+ 
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .switch:hover */.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+ 
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.Input:checked + .Slider {
+  background-color: #183153;
+}
+
+.Input:focus + .Slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.Input:checked + .Slider:before {
+  transform: translateX(30px);
 }
 
 .Main {
   width: 100%;
-  margin: 2rem 1rem;
-  border-radius: 10px;
+  margin: 2rem 1rem 2rem 0;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .Header {
-  background-color: yellow;
   width: 100%;
-  padding: 2rem;
-  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.Search {
+  background-color: rgba(225, 225, 225, 0.05);
+  height: 60px;
+  width: 30%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 50px;
+}
+
+.Search img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7427%) hue-rotate(23deg) brightness(118%) contrast(118%);
+  transform: scaleX(-1);
+  margin: 0 0.5rem;
+  opacity: 0.8;
+}
+
+.Search input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  color: #fff;
+  font-size: 1.12rem;
+  opacity: 0.8;
+  outline: none;
+}
+
+.Search input::placeholder {
+  color: #fff;
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.User {
+  background-color: rgba(225, 225, 225, 0.05);
+  height: 60px;
+  width: 25%;
+  padding: 0 1rem 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 50px;
+}
+
+.UserData {
+  height: 100%;
+  width: 100%;
+}
+
+.UserDetails {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.UserImage, .UserDetails {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.UserImage {
+  background-color: #742BEC;
+  border-radius: 50%;
+}
+
+.UserImage img {
+  filter: brightness(0) saturate(100%) invert(6%) sepia(18%) saturate(2105%) hue-rotate(183deg) brightness(92%) contrast(95%);
+  padding: 0.2rem;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.UserName {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.User button {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7427%) hue-rotate(23deg) brightness(118%) contrast(118%);
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin-right: 0.2rem;
+  font-size: 1rem;
+  opacity: 0.8;
+  outline: none;
+  cursor: pointer;
 }
 
 .Content {
   width: 100%;
   display: flex;
   flex: 1;
-  border-radius: 10px;
+  border-radius: 15px;
+  gap: 1.5rem;
 }
 
 .Weather {
   width: 60%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .Highlight {
   width: 40%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .Temperature {
-  background-color: blue;
+  background-color: rgba(225, 225, 225, 0.05);
   width: 100%;
   height: 50%;
-  border-radius: 10px;
+  border-radius: 35px;
+}
+
+.Location {
+  display: flex;
+  color: #fff;
+  gap: 0.2rem;
+  font-size: 1.1rem;
+  background-color: #742BEC;
+  border-radius: 35px;
+  width: 10%;
+  height: 35px;
+  margin: 2rem 0 0 2rem;
+  padding: 0.5rem 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.Location img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7427%) hue-rotate(23deg) brightness(118%) contrast(118%);
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
 
 .Forecast {
-  background-color: aquamarine;
+  background-color: rgba(225, 225, 225, 0.05);
   width: 100%;
   height: 50%;
-  border-radius: 10px;
+  border-radius: 35px;
 }
 
 .TodaysHighlight {
-  background-color: wheat;
+  background-color: rgba(225, 225, 225, 0.05);
   width: 100%;
   height: 60%;
-  border-radius: 10px;
+  border-radius: 35px;
 }
 
 .OtherCities {
-  background-color: orange;
+  background-color: rgba(225, 225, 225, 0.05);
   width: 100%;
   height: 40%;
-  border-radius: 10px;
+  border-radius: 35px;
 }

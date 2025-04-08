@@ -10,6 +10,8 @@ import calender from "./icons/calender.png";
 import settings from "./icons/setting.png";
 import logout from "./icons/log-out.png";
 import Switch from "./theme";
+import cloud from "./icons/cloud.png";
+import clouds from "./icons/clouds.svg";
 import Temperature from "./temp";
 function App() {
   return (
@@ -57,21 +59,175 @@ function App() {
           <div className={myStyles.Content}>
             <div className={myStyles.Weather}>
               <div className={myStyles.Temperature}>
-                <div className={myStyles.TempContainer}>
+                <div className={myStyles.WeatherLocation}>
                   <div className={myStyles.Location}>
-                    <img src={location} alt="location" />
-                    <p>India</p>
+                    <img src={location} width="20px" alt="location" />
+                    <p>Kolkata</p>
                   </div>
-                  <Temperature />
+                  <div className={myStyles.Time}>
+                    <h2>Monday</h2>
+                    <p>1 Jan, 2025</p>
+                  </div>
+                  <div className={myStyles.WeatherTemperature}>
+                    <h1>27&deg;C</h1>
+                    <p>High: 28&deg;C | Low: 25&deg;C</p>
+                  </div>
+                  <span className={myStyles.FloatingCloud}>
+                    <img src={cloud} alt="cloud" />
+                  </span>
+                  <span className={myStyles.Cloud}>
+                    <img src={cloud} alt="cloud" />
+                  </span>
                 </div>
-                <div className={myStyles.CurrentDate}></div>
-                <div className={myStyles.CurrentTemperature}></div>
+                <div className={myStyles.WeatherData}>
+                  <Temperature />
+                  <img src={clouds} width="150px" alt="clouds" />
+                  <div className={myStyles.SkyData}>
+                    <h1>Cloudy</h1>
+                    <p>Feel like 26</p>
+                  </div>
+                </div>
               </div>
-              <div className={myStyles.Forecast}></div>
+              <div className={myStyles.Forecast}>
+                <div className={myStyles.ForecastData}>
+                  <div className={myStyles.btn}>
+                    <p>Week</p>
+                    <button>See All</button>
+                  </div>
+                  <div className={myStyles.TodayData}>
+                    <div className={myStyles.Data}>
+                      <p>Sun</p>
+                      <img src={clouds} width={35} alt="clouds" />
+                      <p>20&deg;C</p>
+                    </div>
+                    <div className={myStyles.Data}>
+                      <p>Mon</p>
+                      <img src={clouds} width={35} alt="clouds" />
+                      <p>20&deg;C</p>
+                    </div>{" "}
+                    <div className={myStyles.Data}>
+                      <p>Tue</p>
+                      <img src={clouds} width={35} alt="clouds" />
+                      <p>20&deg;C</p>
+                    </div>{" "}
+                    <div className={myStyles.Data}>
+                      <p>Wed</p>
+                      <img src={clouds} width={35} alt="clouds" />
+                      <p>20&deg;C</p>
+                    </div>
+                    <div className={myStyles.Data}>
+                      <p>Thurs</p>
+                      <img src={clouds} width={35} alt="clouds" />
+                      <p>20&deg;C</p>
+                    </div>{" "}
+                    <div className={myStyles.Data}>
+                      <p>Fri</p>
+                      <img src={clouds} width={35} alt="clouds" />
+                      <p>20&deg;C</p>
+                    </div>{" "}
+                    <div className={myStyles.Data}>
+                      <p>Sat</p>
+                      <img src={clouds} width={35} alt="clouds" />
+                      <p>20&deg;C</p>
+                    </div>{" "}
+                  </div>
+                  <div className={myStyles.TomorrowData}>
+                    <div className={myStyles.TomorrowForecastData}>
+                      <div className={myStyles.TomorrowForecast}>
+                        <h1>Tomorrow</h1>
+                        <p>Thunder storm</p>
+                      </div>
+                      <div className={myStyles.TomorrowTemperature}>
+                        <p>24&deg;C</p>
+                      </div>
+                    </div>
+                    <span>
+                      <img src={cloud} width={60} alt="cloud" />
+                    </span>
+                  </div>
+                </div>
+                <div className={myStyles.ForecastTime}>
+                  <p>Sunrise</p>
+                  <h1>6:45 AM</h1>
+                  <p>Sunset</p>
+                  <h1>5:30 PM</h1>
+                  <p>Length of day</p>
+                  <h1>10h 23m</h1>
+                </div>
+              </div>
             </div>
             <div className={myStyles.Highlight}>
-              <div className={myStyles.TodaysHighlight}></div>
-              <div className={myStyles.OtherCities}></div>
+              <div className={myStyles.TodaysHighlight}>
+                <p>Todays Highlight</p>
+                <div className={myStyles.HighlightForecast}>
+                  <div className={myStyles.HighlightForecast}>
+                    Chances of Rain
+                    <span>35%</span>
+                  </div>
+                  <div className={myStyles.HighlightForecast}>
+                    UV Index
+                    <span>1 Low</span>
+                  </div>
+                  <div className={myStyles.HighlightForecast}>
+                    Wind Status
+                    <span>SW 13km/h</span>
+                  </div>
+                  <div className={myStyles.HighlightForecast}>
+                    Humidity
+                    <span>88%</span>
+                  </div>
+                </div>
+              </div>
+              <div className={myStyles.OtherCities}>
+                <div className={myStyles.Cities}>
+                  <div>
+                    <p>Other Cities</p>
+                    <button>Show All</button>
+                  </div>
+                  <div className={myStyles.OtherCitiesForecast}>
+                    <div>
+                      <div className={myStyles.CitiesName}>
+                        <h1>24&deg;C</h1>
+                        <p>Mumbai</p>
+                      </div>
+                      <div className={myStyles.CitiesForecast}>
+                        <p>High: 28 | Low: 20</p>
+                        <img src={clouds} width={50} alt="clouds" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className={myStyles.CitiesName}>
+                        <h1>24&deg;C</h1>
+                        <p>Delhi</p>
+                      </div>
+                      <div className={myStyles.CitiesForecast}>
+                        <p>High: 28 | Low: 20</p>
+                        <img src={clouds} width={50} alt="clouds" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className={myStyles.CitiesName}>
+                        <h1>24&deg;C</h1>
+                        <p>Chennai</p>
+                      </div>
+                      <div className={myStyles.CitiesForecast}>
+                        <p>High: 28 | Low: 20</p>
+                        <img src={clouds} width={50} alt="clouds" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className={myStyles.CitiesName}>
+                        <h1>24&deg;C</h1>
+                        <p>Bangalore</p>
+                      </div>
+                      <div className={myStyles.CitiesForecast}>
+                        <p>High: 28 | Low: 20</p>
+                        <img src={clouds} width={50} alt="clouds" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

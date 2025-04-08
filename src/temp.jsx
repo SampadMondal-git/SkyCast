@@ -13,7 +13,6 @@ function Temperature() {
   width: 80px;
   height: 50px;
   position: relative;
-  margin: 2rem 2rem 0 0;
   --active-color: linear-gradient(135deg, #ff6b6b 0%, #f43f5e 100%);
   --inactive-bg: #1f2937;
 }
